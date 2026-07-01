@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>
+      Golden Career Consuling Institute India — After 10th &amp; 12th
+    </title>
+    <meta
+      name="description"
+      content="Free career counselling for Class 10 and 12 students in India. Streams, entrance exams, and personalised guidance."
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+      /* Small additions to the shared CSS to support the new sections */
+      .banner {
+        background: linear-gradient(
+          180deg,
+          rgba(6, 182, 212, 0.06),
+          transparent
+        );
+        border-radius: 6px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: stretch;
+        padding: 0;
+        /* margin: 12px 0; */
+      }
+      .banner .banner-media {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        background: #e6f7fb;
+        display: block;
+      }
+      .banner .banner-body {
+        color: #ffffff;
+        padding: 16px;
+        background: linear-gradient(60deg, #7a5986, #fbfdff);
+      }
+      .two-cards {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 12px;
+      }
+      .two-cards .card {
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+      }
+      .two-cards .card img {
+        width: 125px;
+        height: 125px;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+      .steps {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-top: 12px;
+        perspective: 1000px;
+      }
+      .flip-card {
+        height: 100%;
+        cursor: pointer;
+        outline: none;
+      }
+      .flip-card:focus-visible {
+        outline: 2px solid #ffeb3b;
+        outline-offset: 4px;
+      }
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        min-height: 180px;
+        transform-style: preserve-3d;
+        transition: transform 0.6s ease;
+      }
+      .flip-card:hover .flip-card-inner,
+      .flip-card:focus-within .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+      .flip-card-front,
+      .flip-card-back {
+        position: absolute;
+        inset: 0;
+        backface-visibility: hidden;
+        border-radius: 12px;
+        padding: 14px;
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        background: linear-gradient(60deg, #7a5986, #fbfdff);
+        box-shadow: var(--shadow);
+      }
+      .flip-card-back {
+        transform: rotateY(180deg);
+        background: linear-gradient(60deg, #2e2760, #7a5986);
+        color: #fff;
+      }
+      .step-image {
+        width: 56px;
+        height: 56px;
+        min-width: 56px;
+        border-radius: 12px;
+        object-fit: cover;
+        background: var(--brand);
+        flex-shrink: 0;
+      }
+      .flip-card-back .step-image {
+        background: #f6be33;
+      }
+
+      /* Flip indicator (small rotate icon) */
+      .flip-indicator {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        width: 28px;
+        height: 28px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.95);
+        opacity: 0.95;
+        transition:
+          transform 0.35s ease,
+          opacity 0.18s ease;
+        pointer-events: none;
+        z-index: 5;
+      }
+      .flip-card:hover .flip-indicator,
+      .flip-card:focus-within .flip-indicator {
+        transform: rotate(180deg) translateY(-1px);
+        opacity: 1;
+      }
+      .flip-card-back .flip-indicator {
+        transform: rotate(180deg);
+      }
+      .flip-card-back .small-two {
+        color: #f0ebff;
+      }
+      @media (min-width: 768px) {
+        .banner .banner-media {
+          height: 220px;
+        }
+        .two-cards {
+          grid-template-columns: 1fr 1fr;
+        }
+        .steps {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      @media (min-width: 1024px) {
+        .banner .banner-media {
+          height: 300px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="site-header container" role="banner">
+      <a class="logo" href="index.html">
+        <img
+          alt="Golden Career Consuling Institute"
+          src="assets/logo.png"
+          aria-hidden="true"
+        />
+        <strong>Golden Career </strong>
+        Consuling Institute
+      </a>
+      <button id="navToggle" aria-label="Open menu" aria-expanded="false">
+        ☰
+      </button>
+      <nav id="mainNav" class="nav" role="navigation" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="about.html">About us</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="contact.html">Contact us</a>
+      </nav>
+    </header>
+
+    <main class="container" role="main">
+      <!-- Banner image section / placeholder -->
+      <section class="banner" aria-labelledby="bannerTitle">
+        <img
+          class="banner-media"
+          src="assets/banner.png"
+          alt="Golden Career Consuling Institute"
+        />
+        <div class="banner-body">
+          <h1 id="bannerTitle">Plan your next step with confidence</h1>
+          <p class="small">
+            Free, board-aware guidance for Class 10 and 12 students across India
+            — choose the right stream, subjects and college path.
+          </p>
+          <div class="row" style="margin-top: 10px">
+            <a class="btn" href="contact.html">Book a free session</a>
+            <a class="small" href="about.html">Learn how we help</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Two card horizontal placements for Our Vision and Our Mission -->
+      <section aria-labelledby="vmTitle">
+        <h2 id="vmTitle">Our purpose</h2>
+
+        <div class="two-cards" role="region" aria-label="Vision and Mission">
+          <article class="card" aria-labelledby="visionTitle">
+            <img src="assets/vision.png" alt="Vision icon" />
+            <div>
+              <h3 id="visionTitle">Our Vision</h3>
+              <p class="small">
+                Every student in India should make subject and career choices
+                with clarity — not confusion. We aim to make practical,
+                board-aware guidance accessible and actionable.
+              </p>
+            </div>
+          </article>
+
+          <article class="card" aria-labelledby="missionTitle">
+            <img src="assets/mission.png" alt="Mission icon" />
+            <div>
+              <h3 id="missionTitle">Our Mission</h3>
+              <p class="small">
+                Provide short, personalised counselling sessions that map
+                interests, marks and local exam realities to realistic study
+                paths and college options.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Three card placements for steps to plan a career guidance -->
+      <section aria-labelledby="stepsTitle" style="margin-top: 18px">
+        <h2 id="stepsTitle">How we help — 3 simple steps</h2>
+
+        <div class="steps" role="list">
+          <!-- Step 1 -->
+          <div
+            class="flip-card"
+            role="listitem"
+            aria-labelledby="step1"
+            tabindex="0"
+          >
+            <div class="flip-card-inner">
+              <div class="flip-card-front card-two">
+                <img
+                  class="step-image"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%237a5986'/%3E%3Ctext x='32' y='38' font-size='28' text-anchor='middle' fill='%23fff' font-family='Arial,sans-serif'%3E1%3C/text%3E%3C/svg%3E"
+                  alt="Step 1 placeholder"
+                />
+                <span class="flip-indicator" aria-hidden="true"
+                  ><svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M21 12a9 9 0 1 0-3 6.7"></path>
+                    <polyline points="21 12 21 6 15 6"></polyline></svg
+                ></span>
+              </div>
+
+              <div class="flip-card-back card-two">
+                <div>
+                  <p class="small-two">
+                    Turn your strengths into a clear subject strategy with board
+                    and entrance exam advice.
+                  </p>
+                  <p class="small-two">
+                    Flip the card to see the next step and keep moving forward.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div
+            class="flip-card"
+            role="listitem"
+            aria-labelledby="step2"
+            tabindex="0"
+          >
+            <div class="flip-card-inner">
+              <div class="flip-card-front card-two">
+                <img
+                  class="step-image"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%237a5986'/%3E%3Ctext x='32' y='38' font-size='28' text-anchor='middle' fill='%23fff' font-family='Arial,sans-serif'%3E2%3C/text%3E%3C/svg%3E"
+                  alt="Step 2 placeholder"
+                />
+                <span class="flip-indicator" aria-hidden="true"
+                  ><svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M21 12a9 9 0 1 0-3 6.7"></path>
+                    <polyline points="21 12 21 6 15 6"></polyline></svg
+                ></span>
+              </div>
+
+              <div class="flip-card-back card-two">
+                <div>
+                  <p class="small-two">
+                    Get a side-by-side view of stream choices so you can compare
+                    practical career options and exam paths.
+                  </p>
+                  <p class="small-two">
+                    Use this insight to choose a path that matches your goals.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div
+            class="flip-card"
+            role="listitem"
+            aria-labelledby="step3"
+            tabindex="0"
+          >
+            <div class="flip-card-inner">
+              <div class="flip-card-front card-two">
+                <img
+                  class="step-image"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%237a5986'/%3E%3Ctext x='32' y='38' font-size='28' text-anchor='middle' fill='%23fff' font-family='Arial,sans-serif'%3E3%3C/text%3E%3C/svg%3E"
+                  alt="Step 3 placeholder"
+                />
+                <span class="flip-indicator" aria-hidden="true"
+                  ><svg
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M21 12a9 9 0 1 0-3 6.7"></path>
+                    <polyline points="21 12 21 6 15 6"></polyline></svg
+                ></span>
+              </div>
+
+              <div class="flip-card-back card-two">
+                <div>
+                  <p class="small-two">
+                    Walk away with a doable action plan that fits your board and
+                    college ambitions.
+                  </p>
+                  <p class="small-two">
+                    Share it with your parents or teacher to stay on track.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Existing sections (services, why choose us, testimonial, footer) remain below -->
+      <section aria-labelledby="servicesTitle" style="margin-top: 18px">
+        <h2 id="servicesTitle">Popular guidance areas</h2>
+        <div class="services">
+          <article class="card" aria-labelledby="s1">
+            <h3 id="s1">Science PCM and PCB</h3>
+            <p class="small">
+              Subject combinations, engineering vs medical paths, JEE NEET
+              basics, and career options beyond the top exams.
+            </p>
+          </article>
+
+          <article class="card" aria-labelledby="s2">
+            <h3 id="s2">Commerce</h3>
+            <p class="small">
+              Accountancy, B.Com, CA foundation, CS, CMA, and professional
+              course pathways explained simply.
+            </p>
+          </article>
+
+          <article class="card" aria-labelledby="s3">
+            <h3 id="s3">Arts and Humanities</h3>
+            <p class="small">
+              Design, social sciences, law, journalism, and creative careers
+              with practical next steps and sample colleges.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Counseling Services -->
+      <section aria-labelledby="servicesTitle" style="margin-top: 18px">
+        <h2 id="servicesTitle">
+          Our Counselling Services For Students & Professionals
+        </h2>
+        <div class="services">
+          <article class="card-two" aria-labelledby="s1">
+            <h3 id="s1">For School Students</h3>
+            <p class="small-two">
+              Subject combinations, engineering vs medical paths, JEE NEET
+              basics, and career options beyond the top exams.
+            </p>
+          </article>
+
+          <article class="card-two" aria-labelledby="s2">
+            <h3 id="s2">For College Students</h3>
+            <p class="small-two">
+              Accountancy, B.Com, CA foundation, CS, CMA, and professional
+              course pathways explained simply.
+            </p>
+          </article>
+
+          <article class="card-two" aria-labelledby="s3">
+            <h3 id="s3">For Working Professionals</h3>
+            <p class="small-two">
+              Design, social sciences, law, journalism, and creative careers
+              with practical next steps and sample colleges.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="grid" aria-labelledby="whyTitle" style="margin-top: 18px">
+        <div>
+          <h2 id="whyTitle">Why students choose us</h2>
+          <div class="card">
+            <ul class="small">
+              <li>
+                <strong>Personalised sessions</strong> based on board, marks and
+                interests.
+              </li>
+              <li>
+                <strong>Local knowledge</strong> of Indian entrance exams and
+                state board options.
+              </li>
+              <li>
+                <strong>Practical next steps</strong> — sample subject combos
+                and college lists.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <aside class="sidebar">
+          <div class="card">
+            <h3>Book a free call</h3>
+            <p class="small">
+              15-minute introductory call to map options and next steps.
+            </p>
+            <a class="btn" href="contact.html">Request call</a>
+          </div>
+        </aside>
+      </section>
+
+      <section aria-labelledby="testiTitle" style="margin-top: 18px">
+        <h2 id="testiTitle">What students say</h2>
+        <div class="card testimonial" role="article">
+          <img
+            alt="Student portrait"
+            src="assets/student.png"
+            aria-hidden="true"
+          />
+          <div class="quote">
+            <p>
+              <strong
+                >“The session helped me choose PCB with confidence and prepare
+                for NEET.”</strong
+              >
+            </p>
+            <p class="small">— Ananya, Mumbai</p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="site-footer" role="contentinfo">
+        <div class="row">
+          <div class="small">
+            © <strong>Golden Career Consuling Institute</strong> 2026
+          </div>
+          <div class="small">Privacy Policy • Terms</div>
+        </div>
+      </footer>
+    </main>
+
+    <script src="js/main.js" defer></script>
+  </body>
+</html>
