@@ -362,3 +362,347 @@ textarea {
 li {
   margin-bottom: 10px; /* Adds space below each item */
 }
+
+/* ============================================================
+   Pricing Page
+   ============================================================ */
+
+.pricing-hero {
+  background: linear-gradient(60deg, #7a5986, #fbfdff);
+  padding: 32px 20px;
+  border-radius: 12px;
+  text-align: center;
+  margin: 16px 0;
+}
+.pricing-hero h1 {
+  margin: 0 0 10px;
+  font-size: 1.6rem;
+}
+.pricing-hero .small {
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Pricing grid */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+/* Pricing card */
+.pricing-card {
+  background: var(--card);
+  border: 1px solid #e6eef6;
+  border-radius: 14px;
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow);
+  position: relative;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.pricing-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.1);
+}
+
+/* Featured card (Recommended) */
+.pricing-card-featured {
+  border: 2px solid #7a5986;
+  transform: scale(1.02);
+}
+.pricing-card-featured:hover {
+  transform: scale(1.02) translateY(-3px);
+}
+
+.pricing-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, #7a5986, #a07eb0);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 4px 16px;
+  border-radius: 20px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.pricing-card-header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+.pricing-card-header h2 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+.pricing-subtitle {
+  margin: 4px 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* Price block */
+.pricing-price {
+  text-align: center;
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #eef2f7;
+}
+.pricing-original {
+  display: block;
+  font-size: 0.95rem;
+  color: #9ca3af;
+  text-decoration: line-through;
+}
+.pricing-current {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.2;
+}
+.pricing-discount {
+  display: inline-block;
+  background: #dcfce7;
+  color: #16a34a;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 12px;
+  margin-top: 6px;
+}
+
+/* Features list */
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  flex: 1;
+}
+.pricing-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+  line-height: 1.4;
+  color: #1f2937;
+}
+.check-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  background: #7a5986;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.65rem;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+.pricing-cta {
+  display: block;
+  text-align: center;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+/* Value section */
+.pricing-value {
+  background: linear-gradient(60deg, #7a5986, #fbfdff);
+  padding: 24px 18px;
+  border-radius: 12px;
+  text-align: center;
+  margin: 24px 0;
+}
+.pricing-value h2 {
+  margin: 0 0 10px;
+}
+.pricing-value .small {
+  max-width: 640px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Testimonials on pricing page */
+.pricing-testimonials {
+  margin: 24px 0;
+}
+.pricing-testimonials h2 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+/* FAQ Section */
+.pricing-faq {
+  margin: 24px 0;
+}
+.pricing-faq h2 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.faq-list {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--card);
+  border: 1px solid #e6eef6;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+.faq-item:hover {
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+}
+
+.faq-question {
+  padding: 14px 16px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  color: #0f172a;
+  user-select: none;
+  list-style: none;
+  border-radius: 10px;
+}
+.faq-question:focus-visible {
+  outline: 2px solid #7a5986;
+  outline-offset: -2px;
+}
+.faq-question::-webkit-details-marker {
+  display: none;
+}
+.faq-question::after {
+  content: "+";
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #7a5986;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+details[open] .faq-question::after {
+  content: "−";
+}
+
+.faq-answer {
+  padding: 0 16px 14px;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Final CTA */
+.pricing-cta-section {
+  margin: 28px 0;
+}
+.cta-card {
+  background: linear-gradient(135deg, #7a5986, #5a3a6a);
+  color: #fff;
+  padding: 28px 20px;
+  border-radius: 14px;
+  text-align: center;
+}
+.cta-card h2 {
+  margin: 0 0 8px;
+  color: #fff;
+}
+.cta-card .small {
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 480px;
+  margin: 0 auto 16px;
+  line-height: 1.5;
+}
+.cta-card .btn {
+  background: #fff;
+  color: #7a5986;
+  font-size: 1rem;
+  padding: 12px 24px;
+}
+.cta-card .btn:hover {
+  background: #f0ebff;
+}
+
+.cta-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+  align-items: center;
+}
+.cta-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+.cta-label {
+  font-weight: 600;
+  opacity: 0.8;
+}
+.cta-contact-item a {
+  color: #fff;
+  text-decoration: underline;
+}
+.cta-contact-item a:hover {
+  opacity: 0.85;
+}
+
+/* Active nav link */
+.nav a.active {
+  background: rgba(255, 255, 255, 0.3);
+  color: #0f172a;
+}
+
+/* Responsive: Pricing */
+@media (min-width: 768px) {
+  .pricing-grid {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+  }
+  .testimonials-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .cta-contacts {
+    flex-direction: row;
+    justify-content: center;
+    gap: 24px;
+  }
+  .pricing-card-featured {
+    transform: scale(1.04);
+  }
+  .pricing-card-featured:hover {
+    transform: scale(1.04) translateY(-3px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .pricing-hero h1 {
+    font-size: 2rem;
+  }
+  .pricing-current {
+    font-size: 2.2rem;
+  }
+}
