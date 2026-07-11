@@ -32,8 +32,9 @@ async function loadHTML(elementId, filePath) {
 // Load header and footer when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
   async function loadHeaderFooter() {
-    await loadHTML("header", "header.html"); // Load header into #header
-    await loadHTML("footer", "footer.html"); // Load footer into #footer
+    await loadHTML("header", "../includes/header.html"); // Load header into #header
+    await loadHTML("footer", "../includes/footer.html"); // Load footer into #footer
+    await loadHTML("contact-floating", "../includes/contact-floating.html"); // Load contact floating into #contact-floating
 
     console.log("=>" + document.getElementById("navToggle"));
 
