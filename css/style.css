@@ -188,6 +188,33 @@ body {
 .card-two h3 {
   margin: 0 0 8px 0;
 }
+
+.card-three {
+  background: linear-gradient(60deg, #7a5986, #ffffff);
+  padding: 14px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+.card-three h3 {
+  margin: 0 0 8px 0;
+}
+
+.psychometric-section .content-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+
+.psychometric-section .image-side img {
+  max-width: 500px;
+  border-radius: 8px;
+  object-fit: scale-down;
+}
+
+.psychometric-section .text-side {
+  flex: 1;
+}
 /*.card p{margin:0;color:var(--muted);font-size:0.95rem}*/
 
 /* Two column layout for larger screens */
@@ -295,6 +322,7 @@ textarea {
 /* Utility */
 .row {
   display: flex;
+  flex-direction: row;
   gap: 12px;
   flex-wrap: wrap;
 }
@@ -1210,6 +1238,16 @@ details[open] .faq-question::after {
   .carousel-text {
     font-size: 0.85rem;
     line-height: 1.2;
+  }
+  .psychometric-section .content-wrapper {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .row {
+    flex-direction: column;
+  }
+  .psychometric-section .image-side img {
+    max-width: 100%;
   }
 }
 
