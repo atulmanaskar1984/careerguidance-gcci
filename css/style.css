@@ -188,6 +188,16 @@ body {
 .card-two h3 {
   margin: 0 0 8px 0;
 }
+
+.card-three {
+  background: linear-gradient(60deg, #7a5986, #ffffff);
+  padding: 14px;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+.card-three h3 {
+  margin: 0 0 8px 0;
+}
 /*.card p{margin:0;color:var(--muted);font-size:0.95rem}*/
 
 /* Two column layout for larger screens */
