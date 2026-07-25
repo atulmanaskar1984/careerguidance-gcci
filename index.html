@@ -11,189 +11,55 @@
       content="Free career counselling for Class 10 and 12 students in India. Streams, entrance exams, and personalised guidance."
     />
     <link rel="stylesheet" href="css/style.css" />
-    <style>
-      /* Small additions to the shared CSS to support the new sections */
-      .banner {
-        background: linear-gradient(
-          180deg,
-          rgba(6, 182, 212, 0.06),
-          transparent
-        );
-        border-radius: 6px;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        align-items: stretch;
-        padding: 0;
-        /* margin: 12px 0; */
-      }
-      .banner .banner-media {
-        width: 100%;
-        height: 180px;
-        object-fit: cover;
-        background: #e6f7fb;
-        display: block;
-      }
-      .banner .banner-body {
-        color: #ffffff;
-        padding: 16px;
-        background: linear-gradient(60deg, #7a5986, #fbfdff);
-      }
-      .two-cards {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 12px;
-        margin-top: 12px;
-      }
-      .two-cards .card {
-        display: flex;
-        gap: 12px;
-        align-items: flex-start;
-      }
-      .two-cards .card img {
-        width: 125px;
-        height: 125px;
-        border-radius: 10px;
-        object-fit: cover;
-      }
-      .steps {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 12px;
-        margin-top: 12px;
-        perspective: 1000px;
-      }
-      .flip-card {
-        height: 100%;
-        cursor: pointer;
-        outline: none;
-      }
-      .flip-card:focus-visible {
-        outline: 2px solid #ffeb3b;
-        outline-offset: 4px;
-      }
-      .flip-card-inner {
-        position: relative;
-        width: 100%;
-        min-height: 180px;
-        transform-style: preserve-3d;
-        transition: transform 0.6s ease;
-      }
-      .flip-card:hover .flip-card-inner,
-      .flip-card:focus-within .flip-card-inner {
-        transform: rotateY(180deg);
-      }
-      .flip-card-front,
-      .flip-card-back {
-        position: absolute;
-        inset: 0;
-        backface-visibility: hidden;
-        border-radius: 12px;
-        padding: 14px;
-        display: flex;
-        gap: 12px;
-        align-items: flex-start;
-        justify-content: flex-start;
-        background: linear-gradient(60deg, #7a5986, #fbfdff);
-        box-shadow: var(--shadow);
-      }
-      .flip-card-back {
-        transform: rotateY(180deg);
-        background: linear-gradient(60deg, #2e2760, #7a5986);
-        color: #fff;
-      }
-      .step-image {
-        width: 56px;
-        height: 56px;
-        min-width: 56px;
-        border-radius: 12px;
-        object-fit: cover;
-        background: var(--brand);
-        flex-shrink: 0;
-      }
-      .flip-card-back .step-image {
-        background: #f6be33;
-      }
-
-      /* Flip indicator (small rotate icon) */
-      .flip-indicator {
-        position: absolute;
-        top: 12px;
-        left: 12px;
-        width: 28px;
-        height: 28px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        color: rgba(255, 255, 255, 0.95);
-        opacity: 0.95;
-        transition:
-          transform 0.35s ease,
-          opacity 0.18s ease;
-        pointer-events: none;
-        z-index: 5;
-      }
-      .flip-card:hover .flip-indicator,
-      .flip-card:focus-within .flip-indicator {
-        transform: rotate(180deg) translateY(-1px);
-        opacity: 1;
-      }
-      .flip-card-back .flip-indicator {
-        transform: rotate(180deg);
-      }
-      .flip-card-back .small-two {
-        color: #f0ebff;
-      }
-      @media (min-width: 768px) {
-        .banner .banner-media {
-          height: 220px;
-        }
-        .two-cards {
-          grid-template-columns: 1fr 1fr;
-        }
-        .steps {
-          grid-template-columns: repeat(3, 1fr);
-        }
-      }
-      @media (min-width: 1024px) {
-        .banner .banner-media {
-          height: 300px;
-        }
-      }
-    </style>
   </head>
 
   <body>
-    <header class="site-header container" role="banner">
-      <a class="logo" href="index.html">
-        <img
-          alt="Golden Career Consuling Institute"
-          src="assets/logo.png"
-          aria-hidden="true"
-        />
-        <strong>Golden Career </strong>
-        Consuling Institute
-      </a>
-      <button id="navToggle" aria-label="Open menu" aria-expanded="false">
-        ☰
-      </button>
-      <nav id="mainNav" class="nav" role="navigation" aria-label="Main">
-        <a href="index.html">Home</a>
-        <a href="about.html">About us</a>
-        <a href="testimonials.html">Testimonials</a>
-        <a href="contact.html">Contact us</a>
-      </nav>
-    </header>
+    <div id="header"></div>
+    <div id="contact-floating"></div>
 
     <main class="container" role="main">
-      <!-- Banner image section / placeholder -->
+      <!-- Rotating Banner Carousel Section -->
       <section class="banner" aria-labelledby="bannerTitle">
-        <img
-          class="banner-media"
-          src="assets/banner.png"
-          alt="Golden Career Consuling Institute"
-        />
+        <div class="banner-carousel" role="region" aria-label="Banner carousel">
+          <div class="banner-carousel-item active">
+            <img src="assets/banner.png" alt="Career Counselling Session" />
+          </div>
+          <div class="banner-carousel-item">
+            <img
+              id="second"
+              src="assets/third-banner.png"
+              alt="Expert Guidance for Students"
+            />
+            <div class="banner-carousel-content discover-style">
+              <div class="carousel-text-wrapper">
+                <h2 class="carousel-headline">
+                  <span class="accent-text">Psychometric Test</span>
+                </h2>
+                <p class="carousel-text">
+                  This article is about
+                  <span class="accent-text">Importance</span> of conducting
+                  Aptitude test for selection of Right Career path after 10th
+                  and 12th.
+                  <a href="about.html#article-psychometric" class="carousel-cta"
+                    >Read more →</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="banner-carousel-dots">
+            <button
+              class="banner-carousel-dot active"
+              aria-label="Slide 1"
+              data-slide="0"
+            ></button>
+            <button
+              class="banner-carousel-dot"
+              aria-label="Slide 2"
+              data-slide="1"
+            ></button>
+          </div>
+        </div>
         <div class="banner-body">
           <h1 id="bannerTitle">Plan your next step with confidence</h1>
           <p class="small">
@@ -238,6 +104,68 @@
         </div>
       </section>
 
+      <!-- Counseling Services -->
+      <section aria-labelledby="servicesTitle" style="margin-top: 18px">
+        <h2 id="servicesTitle">
+          Our Counselling Services For Students & Professionals
+        </h2>
+        <div class="services">
+          <article class="card-two" aria-labelledby="s1">
+            <h3 id="s1">For School Students</h3>
+            <p class="small-two">
+              Subject combinations, engineering vs medical paths, JEE NEET
+              basics, and career options beyond the top exams.
+            </p>
+          </article>
+
+          <article class="card-two" aria-labelledby="s2">
+            <h3 id="s2">For College Students</h3>
+            <p class="small-two">
+              Accountancy, B.Com, CA foundation, CS, CMA, and professional
+              course pathways explained simply.
+            </p>
+          </article>
+
+          <article class="card-two" aria-labelledby="s3">
+            <h3 id="s3">For Working Professionals</h3>
+            <p class="small-two">
+              Design, social sciences, law, journalism, and creative careers
+              with practical next steps and sample colleges.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Existing sections (services, why choose us, testimonial, footer) remain below -->
+      <section aria-labelledby="servicesTitle" style="margin-top: 18px">
+        <h2 id="servicesTitle">Popular guidance areas</h2>
+        <div class="services">
+          <article class="card" aria-labelledby="s1">
+            <h3 id="s1">Science PCM and PCB</h3>
+            <p class="small">
+              Subject combinations, engineering vs medical paths, JEE NEET
+              basics, and career options beyond the top exams.
+            </p>
+          </article>
+
+          <article class="card" aria-labelledby="s2">
+            <h3 id="s2">Commerce</h3>
+            <p class="small">
+              Accountancy, B.Com, CA foundation, CS, CMA, and professional
+              course pathways explained simply.
+            </p>
+          </article>
+
+          <article class="card" aria-labelledby="s3">
+            <h3 id="s3">Arts and Humanities</h3>
+            <p class="small">
+              Design, social sciences, law, journalism, and creative careers
+              with practical next steps and sample colleges.
+            </p>
+          </article>
+        </div>
+      </section>
+
       <!-- Three card placements for steps to plan a career guidance -->
       <section aria-labelledby="stepsTitle" style="margin-top: 18px">
         <h2 id="stepsTitle">How we help — 3 simple steps</h2>
@@ -270,8 +198,9 @@
                     aria-hidden="true"
                   >
                     <path d="M21 12a9 9 0 1 0-3 6.7"></path>
-                    <polyline points="21 12 21 6 15 6"></polyline></svg
-                ></span>
+                    <polyline points="21 12 21 6 15 6"></polyline>
+                  </svg>
+                </span>
               </div>
 
               <div class="flip-card-back card-two">
@@ -315,8 +244,9 @@
                     aria-hidden="true"
                   >
                     <path d="M21 12a9 9 0 1 0-3 6.7"></path>
-                    <polyline points="21 12 21 6 15 6"></polyline></svg
-                ></span>
+                    <polyline points="21 12 21 6 15 6"></polyline>
+                  </svg>
+                </span>
               </div>
 
               <div class="flip-card-back card-two">
@@ -360,8 +290,9 @@
                     aria-hidden="true"
                   >
                     <path d="M21 12a9 9 0 1 0-3 6.7"></path>
-                    <polyline points="21 12 21 6 15 6"></polyline></svg
-                ></span>
+                    <polyline points="21 12 21 6 15 6"></polyline>
+                  </svg>
+                </span>
               </div>
 
               <div class="flip-card-back card-two">
@@ -377,68 +308,6 @@
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <!-- Existing sections (services, why choose us, testimonial, footer) remain below -->
-      <section aria-labelledby="servicesTitle" style="margin-top: 18px">
-        <h2 id="servicesTitle">Popular guidance areas</h2>
-        <div class="services">
-          <article class="card" aria-labelledby="s1">
-            <h3 id="s1">Science PCM and PCB</h3>
-            <p class="small">
-              Subject combinations, engineering vs medical paths, JEE NEET
-              basics, and career options beyond the top exams.
-            </p>
-          </article>
-
-          <article class="card" aria-labelledby="s2">
-            <h3 id="s2">Commerce</h3>
-            <p class="small">
-              Accountancy, B.Com, CA foundation, CS, CMA, and professional
-              course pathways explained simply.
-            </p>
-          </article>
-
-          <article class="card" aria-labelledby="s3">
-            <h3 id="s3">Arts and Humanities</h3>
-            <p class="small">
-              Design, social sciences, law, journalism, and creative careers
-              with practical next steps and sample colleges.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <!-- Counseling Services -->
-      <section aria-labelledby="servicesTitle" style="margin-top: 18px">
-        <h2 id="servicesTitle">
-          Our Counselling Services For Students & Professionals
-        </h2>
-        <div class="services">
-          <article class="card-two" aria-labelledby="s1">
-            <h3 id="s1">For School Students</h3>
-            <p class="small-two">
-              Subject combinations, engineering vs medical paths, JEE NEET
-              basics, and career options beyond the top exams.
-            </p>
-          </article>
-
-          <article class="card-two" aria-labelledby="s2">
-            <h3 id="s2">For College Students</h3>
-            <p class="small-two">
-              Accountancy, B.Com, CA foundation, CS, CMA, and professional
-              course pathways explained simply.
-            </p>
-          </article>
-
-          <article class="card-two" aria-labelledby="s3">
-            <h3 id="s3">For Working Professionals</h3>
-            <p class="small-two">
-              Design, social sciences, law, journalism, and creative careers
-              with practical next steps and sample colleges.
-            </p>
-          </article>
         </div>
       </section>
 
@@ -494,16 +363,115 @@
         </div>
       </section>
 
-      <footer class="site-footer" role="contentinfo">
-        <div class="row">
-          <div class="small">
-            © <strong>Golden Career Consuling Institute</strong> 2026
-          </div>
-          <div class="small">Privacy Policy • Terms</div>
+      <!-- Articles Section -->
+      <section aria-labelledby="articlesTitle" style="margin-top: 28px">
+        <h2 id="articlesTitle">Latest articles & resources</h2>
+        <div class="articles" role="region" aria-label="Latest articles">
+          <article class="article-card" aria-labelledby="article1">
+            <img src="assets/banner.png" alt="Article thumbnail" />
+            <div class="article-card-body">
+              <h3 class="article-card-title" id="article1">
+                Career Pathways After 12th for PCB Students
+              </h3>
+              <p class="small article-card-text">
+                Exploring opportunities in medicine, science, management, and
+                creativity
+              </p>
+              <a href="pcb-career-pathways.html" class="article-card-link"
+                >Read more →</a
+              >
+            </div>
+          </article>
+
+          <article class="article-card" aria-labelledby="article2">
+            <img src="assets/banner.png" alt="Article thumbnail" />
+            <div class="article-card-body">
+              <h3 class="article-card-title" id="article2">
+                Navigating Career Pathways after 12th for PCM Students
+              </h3>
+              <p class="small article-card-text">
+                Exploring opportunities in technology, architecture, defense,
+                management
+              </p>
+              <a href="#" class="article-card-link">Read more →</a>
+            </div>
+          </article>
+
+          <article class="article-card" aria-labelledby="article3">
+            <img src="assets/banner.png" alt="Article thumbnail" />
+            <div class="article-card-body">
+              <h3 class="article-card-title" id="article3">
+                Career Pathways After 12th for Commerce Students
+              </h3>
+              <p class="small article-card-text">
+                Exploring opportunities in business, finance, management, and
+                creativity
+              </p>
+              <a href="#" class="article-card-link">Read more →</a>
+            </div>
+          </article>
+
+          <article class="article-card" aria-labelledby="article4">
+            <img src="assets/banner.png" alt="Article thumbnail" />
+            <div class="article-card-body">
+              <h3 class="article-card-title" id="article4">
+                Career Pathways After 12th for Arts Students
+              </h3>
+              <p class="small article-card-text">
+                Exploring opportunities in creativity, communication,
+                management, and social sciences
+              </p>
+              <a href="#" class="article-card-link">Read more →</a>
+            </div>
+          </article>
         </div>
-      </footer>
+      </section>
     </main>
 
+    <div id="footer"></div>
+
+    <script src="js/include.js" defer></script>
     <script src="js/main.js" defer></script>
+
+    <script>
+      // Banner carousel rotation script
+      (function () {
+        const carouselItems = document.querySelectorAll(
+          ".banner-carousel-item",
+        );
+        const dots = document.querySelectorAll(".banner-carousel-dot");
+        let currentSlide = 0;
+        const rotationInterval = 10000; // 10 seconds
+
+        function showSlide(n) {
+          // Remove active class from all items and dots
+          carouselItems.forEach((item) => item.classList.remove("active"));
+          dots.forEach((dot) => dot.classList.remove("active"));
+
+          // Add active class to current slide and dot
+          carouselItems[n].classList.add("active");
+          dots[n].classList.add("active");
+        }
+
+        function nextSlide() {
+          currentSlide = (currentSlide + 1) % carouselItems.length;
+          showSlide(currentSlide);
+        }
+
+        // Add click handlers to dots for manual navigation
+        dots.forEach((dot, index) => {
+          dot.addEventListener("click", () => {
+            currentSlide = index;
+            showSlide(currentSlide);
+            // Reset the interval when user clicks
+            clearInterval(carouselInterval);
+            carouselInterval = setInterval(nextSlide, rotationInterval);
+          });
+        });
+
+        // Start automatic rotation
+        let carouselInterval = setInterval(nextSlide, rotationInterval);
+      })();
+    </script>
   </body>
 </html>

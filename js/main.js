@@ -21,8 +21,12 @@ document.addEventListener('DOMContentLoaded', function () {
       const name = contactForm.querySelector('[name="name"]').value.trim();
       const cls = contactForm.querySelector('[name="class"]').value;
       const board = contactForm.querySelector('[name="board"]').value;
-      const contact = contactForm.querySelector('[name="contact"]').value.trim();
-      const message = contactForm.querySelector('[name="message"]').value.trim();
+      const contact = contactForm
+        .querySelector('[name="contact"]')
+        .value.trim();
+      const message = contactForm
+        .querySelector('[name="message"]')
+        .value.trim();
       let errors = [];
       if (name.length < 2) errors.push('Please enter your full name.');
       if (!['10', '12', 'other'].includes(cls)) errors.push('Select your class.');

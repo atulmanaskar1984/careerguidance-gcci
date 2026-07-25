@@ -11,26 +11,8 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-    <header class="site-header container">
-      <a class="logo" href="index.html">
-        <img
-          alt="Golden Career Consuling Institute"
-          src="assets/logo.png"
-          aria-hidden="true"
-        />
-        <strong>Golden Career </strong>
-        Consuling Institute
-      </a>
-      <button id="navToggle" aria-label="Open menu" aria-expanded="false">
-        ☰
-      </button>
-      <nav id="mainNav" class="nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About us</a>
-        <a href="testimonials.html">Testimonials</a>
-        <a href="contact.html">Contact us</a>
-      </nav>
-    </header>
+    <div id="header"></div>
+    <div id="contact-floating"></div>
 
     <main class="container">
       <section class="hero" aria-labelledby="contactTitle">
@@ -106,15 +88,11 @@
           </form>
         </div>
       </section>
-
-      <footer class="site-footer">
-        <div class="small">Office address: Kurla, Mumbai, Maharashtra</div>
-        <div class="small">
-          Email: hello@Golden Career Consuling Institute.example
-        </div>
-      </footer>
     </main>
 
+    <div id="footer"></div>
+
+    <script src="js/include.js"></script>
     <script src="js/main.js" defer></script>
   </body>
 </html>
