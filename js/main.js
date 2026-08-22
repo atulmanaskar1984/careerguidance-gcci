@@ -16,6 +16,15 @@ document.addEventListener('DOMContentLoaded', function () {
   // Contact form validation if present
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
+    const privacyConsent = contactForm.querySelector('#privacyConsent');
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+
+    if (privacyConsent && submitBtn) {
+      privacyConsent.addEventListener('change', function () {
+        submitBtn.disabled = !this.checked;
+      });
+    }
+
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
       const name = contactForm.querySelector('[name="name"]').value.trim();

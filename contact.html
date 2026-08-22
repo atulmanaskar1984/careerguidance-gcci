@@ -8,7 +8,7 @@
       name="description"
       content="Contact Golden Career Consuling Institute for free counselling sessions and queries about streams and colleges."
     />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style.css?v=2" />
   </head>
   <body>
     <div id="header"></div>
@@ -80,10 +80,17 @@
               ></textarea>
             </div>
 
+            <div class="form-row" style="margin-top: 12px; display: flex; align-items: flex-start; gap: 8px;">
+              <input type="checkbox" id="privacyConsent" name="privacyConsent" required style="margin-top: 4px;" />
+              <label for="privacyConsent" class="small" style="margin-bottom: 0; line-height: 1.4;">
+                I agree to the <a href="privacy.html" target="_blank" style="text-decoration: underline; color: inherit;">Privacy Notice and Terms of Use</a> and consent to the processing of my personal information to respond to my inquiry.
+              </label>
+            </div>
+
             <div id="formFeedback" class="small" style="display: none"></div>
 
             <div style="margin-top: 12px">
-              <button class="btn" type="submit">Send request</button>
+              <button id="submitBtn" class="btn" type="submit" disabled>Send request</button>
             </div>
           </form>
         </div>
