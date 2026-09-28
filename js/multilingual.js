@@ -16,12 +16,21 @@ const translations = {
   },
 };
 
+var selLang = localStorage.getItem("selectedLanguage") || "en";
+document.getElementById("languageSwitcher").value = selLang;
+updateContent();
+
 document
   .getElementById("languageSwitcher")
   .addEventListener("change", function () {
-    const lang = this.value;
-    document.getElementById("bannerTitle").textContent =
-      translations[lang].bannerTitle;
-    document.getElementById("bannerSubTitle").textContent =
-      translations[lang].bannerSubTitle;
+    selLang = this.value;
+    localStorage.setItem("selectedLanguage", selLang);
+    updateContent();
   });
+
+function updateContent() {
+  document.getElementById("bannerTitle").textContent =
+    translations[selLang].bannerTitle;
+  document.getElementById("bannerSubTitle").textContent =
+    translations[selLang].bannerSubTitle;
+}

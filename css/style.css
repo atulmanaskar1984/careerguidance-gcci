@@ -338,17 +338,6 @@ textarea {
     max-width: 720px;
     padding: 28px;
   }
-  #mainNav {
-    display: flex;
-    position: static;
-    flex-direction: row;
-    background: transparent;
-    padding: 0;
-    box-shadow: none;
-  }
-  #navToggle {
-    display: none;
-  }
   .hero {
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -1187,7 +1176,7 @@ details[open] .faq-question::after {
 
 .article-card img {
   width: 100%;
-  height: 220px;
+  height: 200px;
   object-fit: cover;
 }
 

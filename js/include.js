@@ -29,14 +29,64 @@ async function loadHTML(elementId, filePath) {
   }
 }
 
+// Function to load an external JavaScript file
+function loadJS(filePath) {
+  return new Promise((resolve, reject) => {
+    const existingScript = document.querySelector(`script[src="${filePath}"]`);
+
+    if (existingScript) {
+      if (existingScript.dataset.loaded === "true") {
+        resolve();
+        return;
+      }
+
+      existingScript.addEventListener(
+        "load",
+        () => {
+          existingScript.dataset.loaded = "true";
+          resolve();
+        },
+        { once: true },
+      );
+
+      existingScript.addEventListener(
+        "error",
+        () => reject(new Error(`Failed to load ${filePath}`)),
+        { once: true },
+      );
+      return;
+    }
+
+    const script = document.createElement("script");
+    script.src = filePath;
+    script.defer = true;
+
+    script.addEventListener(
+      "load",
+      () => {
+        script.dataset.loaded = "true";
+        resolve();
+      },
+      { once: true },
+    );
+
+    script.addEventListener(
+      "error",
+      () => reject(new Error(`Failed to load ${filePath}`)),
+      { once: true },
+    );
+
+    document.head.appendChild(script);
+  });
+}
+
 // Load header and footer when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
   async function loadHeaderFooter() {
     await loadHTML("header", "../includes/header.html"); // Load header into #header
+    await loadJS("js/multilingual.js"); // Load shared multilingual behavior
     await loadHTML("footer", "../includes/footer.html"); // Load footer into #footer
     await loadHTML("contact-floating", "../includes/contact-floating.html"); // Load contact floating into #contact-floating
-
-    console.log("=>" + document.getElementById("navToggle"));
 
     const navToggle = document.getElementById("navToggle");
     const mainNav = document.getElementById("mainNav");
