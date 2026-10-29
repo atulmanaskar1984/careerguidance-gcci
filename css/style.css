@@ -1283,21 +1283,29 @@ details[open] .faq-question::after {
 
 /* Responsive: Index Page */
 @media (max-width: 767px) {
+  .banner-carousel {
+    height: 220px;
+  }
+  .banner-carousel-content.discover-style {
+    background: rgba(247, 246, 248, 0.2);
+  }
   .carousel-image-placeholder {
     width: 35%;
     min-height: 180px;
   }
   .carousel-text-wrapper {
-    padding: 30px 20px;
-    gap: 12px;
+    padding: 16px;
+    gap: 8px;
+    text-align: right;
   }
   .carousel-headline {
     font-size: 1.4rem;
     line-height: 1.2;
   }
   .carousel-text {
+    margin: 0;
     font-size: 0.85rem;
-    line-height: 1.2;
+    line-height: 1.4;
   }
   .imagetxt-section .content-wrapper {
     flex-direction: column;
