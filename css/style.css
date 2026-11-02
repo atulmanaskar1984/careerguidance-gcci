@@ -232,6 +232,18 @@ h6 {
   display: none;
 }
 
+.why-section {
+  display: block;
+}
+
+.why-section h2 {
+  margin-bottom: 12px;
+}
+
+.why-section .card {
+  margin-top: 0;
+}
+
 /* Testimonials */
 .testimonial {
   display: flex;
